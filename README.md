@@ -42,3 +42,31 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+### npm install react-bootstrap bootstrap
+### npm install immutable
+### npm install --save-dev css-loader
+### npm i immutable
+### npm i react-scripts
+## Add to Webpack config -      { test: /\.css$/i, use: ['style-loader', 'css-loader'], },
+### npm i match-sorter
+
+
+### npm install react-data-grid --save
+### npm install --save @types/react-data-grid
+### npm install react-router-dom --save
+### npm install --save @types/react-router-dom
+### npm i axios
+### npm install @material-ui/core --save
+### npm install @material-ui/icons --save
+### npm install react-datepicker --save
+### npm install @types/react-datepicker
+### npm install moment --save
+### npm install react-csv --save
+### npm install @types/react-csv
+### npm i react-table --save
+### npm i styled-components --save
+### npm install @types/react-table
+### npm install @types/styled-components
+### 
