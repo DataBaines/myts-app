@@ -12,25 +12,12 @@ interface Props {
 
 function ConfDespParams ({spParameters, submitHandler}){
 
-    // const handleInputChange = e => {
-    //     const {name, value} = e.target
-    //     setValues({...values, [name]: value})
-    // }
-
-    // const addItem = () => {
-    //     const {name, quantity, unitCost} = values
-
-    //     if(!name || !quantity || !unitCost) return
-
-    //     saveItem(values)
-    // }
-
     setDefaultLocale('en-GB');    
     const [values, setValues] = useState(spParameters)
 
-    function mySubmitHandler (event: { preventDefault: () => void; }) {
+    function mySubmitHandler (event) {
         event.preventDefault();
-        submitHandler(event, values)
+        submitHandler(values.queryDate, values.matched, values.customer)
     }
 
     return (

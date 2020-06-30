@@ -10,6 +10,7 @@ import { Route, Switch } from "react-router-dom"
 import Login from './Components/Login'
 import { PrivateRoute } from './Components/PrivateRoute'
 import CustWklyDesps from './Components/CustWklyDesps/CustWklyDesps'
+import './App.css';
 
 function App() {
   

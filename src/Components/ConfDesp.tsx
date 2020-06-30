@@ -28,8 +28,9 @@ function ConfDesp () {
         return {yearWeek: yrWk, queryDate: lastweek, matched: 'N', customer: 'SARAM'}
     }
 
-    function paramSubmit(newParams: React.SetStateAction<{ yearWeek: string; queryDate: Date; matched: string; customer: string }>){
-      setapiParams(newParams)
+    function paramSubmit(queryDate, matched, customer ){
+      let yrwk = getYearWeekString(queryDate)
+      setapiParams({yearWeek: yrwk, queryDate: queryDate, matched: matched, customer: customer})
       setparamFormOpen(false)
     }
 

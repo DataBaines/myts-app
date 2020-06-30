@@ -34,7 +34,8 @@ export function getWeekNumber(d: Date){
         firstSatJan.setDate(onejan.getDate() + (6 - onejan.getDay())) //First 'Day 6' (Sat)
         return firstSatJan
     }
-   
+    console.log('getwknum '+ d)
+
     var yr = d.getFullYear()
     var yearStartDate = yearStart(yr)
   
