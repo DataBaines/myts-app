@@ -1,27 +1,3 @@
-export function weekNumberCalculation(d: Date){
-    if(d >= new Date(2020, 4, 9) && d < new Date(2020, 4, 16))
-        return '2020_19' //Month 4 is May, zero index on month but not day
-    else if(d >= new Date(2020, 4, 16) && d < new Date(2020, 4, 23)){
-        return '2020_20'
-    }
-    else if(d >= new Date(2020, 4, 23) && d < new Date(2020, 4, 30)){
-        return '2020_21'
-    }
-    else if(d >= new Date(2020, 4, 30) && d < new Date(2020, 5, 6)){
-        return '2020_22'
-    }
-    else if(d >= new Date(2020, 5, 6) && d < new Date(2020, 5, 13)){
-        return '2020_23'
-    }
-    else if(d >= new Date(2020, 5, 13) && d < new Date(2020, 5, 20)){
-        return '2020_24'
-    }
-    else {
-        return '2019_12' //Random!!! no result
-    }
-        
-}
-
 export function getWeekNumber(d: Date){
     //Get the week number and year.
     //Weeks start on a Saturday
@@ -36,6 +12,7 @@ export function getWeekNumber(d: Date){
     }
     console.log('getwknum '+ d)
 
+    d.setHours(0,0,0,0)
     var yr = d.getFullYear()
     var yearStartDate = yearStart(yr)
   
@@ -82,14 +59,3 @@ export function getSaturdayFridayString (selDate: Date) {
 export function getDateString (selDate: Date) {
     return [selDate.getDate(), selDate.getMonth()+1, selDate.getFullYear()].join('/')
 }
-
-// function getWeek(d: Date) {
-//     var sevenjan = new Date(d.getFullYear(),0,7);
-//     var first = d.getDate() - d.getDay(); // Day minus day of week
-  
-//     var today = new Date(d.getFullYear(),d.getMonth(),d.getDate());
-//     var dayOfYear = ((today - sevenjan + 86400000)/86400000);
-//     return Math.ceil(dayOfYear/7)
-//   };
-  
-// var today = new Date(2019,11,31);

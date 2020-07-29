@@ -4,13 +4,14 @@ import Header from './Components/Header'
 import Home from './Components/Home'
 import ConfDesp from './Components/ConfDesp'
 import SideMenu from './Components/SideMenu'
-import Invoice from './Components/Invoice'
+import Invoice from './Components/InvoiceExceptionTable'
 import Error from './Components/Error'
 import { Route, Switch } from "react-router-dom"
 import Login from './Components/Login'
 import { PrivateRoute } from './Components/PrivateRoute'
 import CustWklyDesps from './Components/CustWklyDesps/CustWklyDesps'
 import './App.css';
+import InvoiceException from './Components/InvoiceException'
 
 function App() {
   
@@ -21,6 +22,8 @@ function App() {
       <div id = "middle" >
         <Switch>
           <PrivateRoute path="/" component={Home} exact />
+          <PrivateRoute path="/orphaninvoices" component={() => <InvoiceException mode={'orphan'} />} />
+          <PrivateRoute path="/multilineinvoices" component={() => <InvoiceException mode={'multiline'} />} />
           <PrivateRoute path="/confdesp" component={ConfDesp} />
           <PrivateRoute path="/custwklydesps" component={CustWklyDesps} />
           <PrivateRoute path="/invoice" component={Invoice} />

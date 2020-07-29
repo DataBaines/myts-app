@@ -7,7 +7,7 @@ export function authHeader() {
         user = JSON.parse(strUser);
     } catch (e) { }
 
-    console.log('Stored Authorisation: ' + JSON.stringify(user))
+    //console.log('Stored Authorisation: ' + JSON.stringify(user))
 
     if (user && user.authdata) {
         return { 'Authorization': 'Basic ' + user.authdata };

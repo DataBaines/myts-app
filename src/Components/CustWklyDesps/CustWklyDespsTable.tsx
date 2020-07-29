@@ -41,12 +41,15 @@ function CustWklyDespsTable( {yearWeek, customer, selDate} ) {
         let qu ='?parYearWeek='
         qu += yearWeek
         qu += '&parCustomer='
-        qu += customer
+        qu += formatCust(customer)
 
         return qu
     }
 
-
+    function formatCust(cus: string){
+        let replaced = cus.split('&').join('%26')
+        return replaced
+    }    
 
     const columns = React.useMemo(
         () => [
@@ -78,18 +81,16 @@ function CustWklyDespsTable( {yearWeek, customer, selDate} ) {
                     },
                 },
                 {
+                    Header: 'Orders',
+                    accessor: 'Orders',
+                },
+                {
                     Header: 'Packages',
                     accessor: 'Packages',
                 },
                 {
                     Header: 'Products',
                     accessor: 'Products',
-                },
-                {
-                    Header: 'Total Qty',
-                    accessor: d => {
-                        return d.Qty ? d.Qty.toFixed(2) : '0.00'
-                    },
                 },
                 {
                     Header: 'Postcode',

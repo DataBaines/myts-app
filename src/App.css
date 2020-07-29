@@ -58,12 +58,21 @@
 }
 
 .link {
-  margin: 15px;
-  color: azure;
+  color: blue;
 }
 
 .link:hover{
-  color: rgb(189, 233, 29);
+  color: rgb(79, 4, 88);
+  cursor: pointer;
+}
+
+.headerlink {
+  margin: 15px;
+  color: rgb(209, 217, 219);
+}
+
+.headerlink:hover{
+  color: rgb(236, 196, 16);
 }
 
 .navitem {

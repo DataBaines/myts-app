@@ -50,11 +50,16 @@ function ConfirmedDespatchTable( {queryDate, matched, customer} ) {
       query += '&parMatched='
       query += matchd
       query += '&parCustomer='
-      query += cust
+      query += formatCust(cust)
 
       return query
     }
  
+    function formatCust(cus: string){
+      let replaced = cus.split('&').join('%26')
+      return replaced
+    }
+  
     const columns = React.useMemo(
       () => [
         {
