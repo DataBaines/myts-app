@@ -85,12 +85,12 @@ function CustWklyDespsTable( {yearWeek, customer, selDate} ) {
                     accessor: 'Orders',
                 },
                 {
-                    Header: 'Packages',
-                    accessor: 'Packages',
-                },
-                {
                     Header: 'Products',
                     accessor: 'Products',
+                },
+                {
+                    Header: 'Items',
+                    accessor: 'Items',
                 },
                 {
                     Header: 'Postcode',
