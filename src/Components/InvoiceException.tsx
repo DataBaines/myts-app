@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import InvoiceExceptionTable from './InvoiceExceptionTable'
 import InvoiceExceptionParams from './InvoiceExceptionParams'
-import InvoiceExceptionDetail from './InvoiceExceptionDetail'
+import SingleDeliveryDetail from './SingleDeliveryDetail'
 
 type DisplayPage = 'Params' | 'Invoices' | 'Details'
 
@@ -76,13 +76,13 @@ function InvoiceException ({mode}) {
               {(() => {
                 switch (toDisplay) {
                     case 'Invoices':   
-                    return <InvoiceExceptionTable apiParams={buildApiParams()} selectHandler={invoiceSelected} backHandler={tableBackSelected} />
-                  case 'Details':   
-                    return <InvoiceExceptionDetail SenderRef={senderRef} Postcode={postcode} Mode={invMode} backHandler={backSelected}/>
-                  case 'Params': 
-                    return <InvoiceExceptionParams  apiParams={buildApiParams()} mode={invMode} submitHandler={paramsSubmitted}/>  
-                  default:      
-                    return <h1>No project match</h1>
+                        return <InvoiceExceptionTable apiParams={buildApiParams()} selectHandler={invoiceSelected} backHandler={tableBackSelected} />
+                    case 'Details':   
+                        return <SingleDeliveryDetail SenderRef={senderRef} Postcode={postcode} Mode={invMode} backHandler={backSelected}/>
+                    case 'Params': 
+                        return <InvoiceExceptionParams  apiParams={buildApiParams()} mode={invMode} submitHandler={paramsSubmitted}/>  
+                    default:      
+                        return <h1>No project match</h1>
                 }
               })()}
             </div>
@@ -92,7 +92,6 @@ function InvoiceException ({mode}) {
     return (
         <div className='mainbody'>
             <h3>{isOrphanMode()?'Orphan Invoices':'Multi-line Invoices'}</h3>     
-            {/* <div>{toDisplay}</div> */}
             {page()}
         </div>
     )

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import ExpandLessIcon from '@material-ui/icons/ExpandLess'
 import { IconButton } from '@material-ui/core'
-import InvBySRefPcTable from './InvBySRefPcTable'
-import ParcBySRefPcTable from './ParcBySRefPcTable'
+import SingleDeliveryParcTable from './SingleDeliveryParcTable'
+import SingleDeliveryInvTable from './SingleDeliveryInvTable'
 
 
-function InvoiceExceptionDetail ( {SenderRef, Postcode, Mode, backHandler} ) {
+function SingleDeliveryDetail ( {SenderRef, Postcode, Mode, backHandler} ) {
 
     const [apiParams, setapiParams] = useState({senderRef: SenderRef, postcode: Postcode, mode: Mode})
 
@@ -25,11 +25,11 @@ function InvoiceExceptionDetail ( {SenderRef, Postcode, Mode, backHandler} ) {
                     Back
                 </button>
 
-                <InvBySRefPcTable senderRef={apiParams.senderRef} postcode={apiParams.postcode} />
-                <ParcBySRefPcTable senderRef={apiParams.senderRef} postcode={apiParams.postcode} />
+                <SingleDeliveryInvTable senderRef={apiParams.senderRef} postcode={apiParams.postcode} />
+                <SingleDeliveryParcTable senderRef={apiParams.senderRef} postcode={apiParams.postcode} />
             </div>
         </div>
     )
 }
 
-export default InvoiceExceptionDetail
+export default SingleDeliveryDetail

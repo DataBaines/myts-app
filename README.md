@@ -27,11 +27,6 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-To run in Debug first build then 
-### http-server ./build
-This will host the build folder on http://192.168.0.174:8080
-F5 to Dubug.
-
 ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
@@ -47,6 +42,14 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+We don't tsc build this app we use:
+### `npm run build`
+
+To run in Debug first build then 
+### http-server ./build
+This will host the build folder on http://192.168.0.174:8080
+F5 to Dubug.
 
 
 ### npm install react-bootstrap bootstrap

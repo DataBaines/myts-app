@@ -5,7 +5,7 @@ import {authHeader} from '../_helpers/authHelper'
 import apiConf from '../_helpers/apiConf'
 
 
-function ParcBySRefPcTable( {senderRef, postcode} ) {
+function SingleDeliveryParcTable( {senderRef, postcode} ) {
 
     const [data, setData] = useState( [] )
     const [query, setQuery] = useState(buildQuery)
@@ -140,4 +140,4 @@ function ParcBySRefPcTable( {senderRef, postcode} ) {
     )
 }
 
-export default ParcBySRefPcTable
+export default SingleDeliveryParcTable

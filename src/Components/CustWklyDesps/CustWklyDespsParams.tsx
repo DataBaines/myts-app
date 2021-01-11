@@ -38,20 +38,6 @@ function CustWklyDespsParams ({spParameters, selectedHandler}) {
         query += yearWk
         return query
     }
-    
-    // function getAllCustomers(yearWk: string) {
-    //   fetch(ApiConf.url + 'sp/GetCustomers' + buildCustomerQuery(yearWk))
-    //     .then(response => {
-    //       response.blob().then(blob => {
-    //         let url = window.URL.createObjectURL(blob);
-    //         let a = document.createElement('a');
-    //         a.href = url;
-    //         a.download = 'employees.json';
-    //         a.click();
-    //       });
-    //       //window.location.href = response.url;
-    //   });
-    // }
 
     const handler = function(e){
         e.preventDefault();

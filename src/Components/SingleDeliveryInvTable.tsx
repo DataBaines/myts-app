@@ -5,7 +5,7 @@ import {authHeader} from '../_helpers/authHelper'
 import apiConf from '../_helpers/apiConf'
 
 
-function InvBySRefPcTable( {senderRef, postcode} ) {
+function SingleDeliveryInvTable( {senderRef, postcode} ) {
 
     const [data, setData] = useState( [] )
     const [query, setQuery] = useState(buildQuery)
@@ -121,7 +121,10 @@ function InvBySRefPcTable( {senderRef, postcode} ) {
                     <div className='tableparams'>Order Reference: '{senderRef}'  Delivery Postcode: '{postcode}'</div>
                     <div className='tableparams'>Invoice Details...</div>
                     <Styles>
-                        <BaseTable columns={columns} data={data} />
+                        <BaseTable 
+                            columns={columns} 
+                            data={data} 
+                        />
                     </Styles>
                 </div>
             </div>
@@ -130,7 +133,7 @@ function InvBySRefPcTable( {senderRef, postcode} ) {
     )
 }
 
-export default InvBySRefPcTable
+export default SingleDeliveryInvTable
 
 // const range = len => {
 //     const arr: number[] = []

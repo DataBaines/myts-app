@@ -23,6 +23,7 @@ export const Styles = styled.div`
           border-bottom: 0;
         }
       }
+      :nth-child(even) {background-color: #f2f2f2;}
     }
 
     th,
@@ -44,69 +45,49 @@ export const Styles = styled.div`
     }
   }
 `
+// Create a default prop getter
+const defaultPropGetter = () => ({})
 
-function BaseTable({ columns, data }) {
+function BaseTable({ columns, data, getRowProps = (row) => ({}) }) {
   // Use the state and functions returned from useTable to build your UI
+ 
+  const tableInstance= useTable({
+    columns,
+    data,
+  })
+
   const {
     getTableProps,
     getTableBodyProps,
     headerGroups,
     rows,
     prepareRow,
-  } = useTable({
-    columns,
-    data,
-  })
-
-  // Render the UI for your table
-  // return (
-  //   <table {...getTableProps()}>
-  //     <thead>
-  //       {headerGroups.map(headerGroup => (
-  //         <tr {...headerGroup.getHeaderGroupProps()}>
-  //           {headerGroup.headers.map(column => (
-  //             <th {...column.getHeaderProps()}>{column.render('Header')}</th>
-  //           ))}
-  //         </tr>
-  //       ))}
-  //     </thead>
-  //     <tbody {...getTableBodyProps()}>
-  //       {rows.map((row, i) => {
-  //         prepareRow(row)
-  //         return (
-  //           <tr {...row.getRowProps()}>
-  //             {row.cells.map(cell => {
-  //               return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
-  //             })}
-  //           </tr>
-  //         )
-  //       })}
-  //     </tbody>
-  //   </table>
-      return (
-        <MaUTable {...getTableProps()}>
-          <TableHead>
-            {headerGroups.map(headerGroup => (
-              <TableRow {...headerGroup.getHeaderGroupProps()}>
-                {headerGroup.headers.map(column => (
-                  <TableCell {...column.getHeaderProps()}>{column.render('Header')}</TableCell>
-                ))}
-              </TableRow>
+  } = tableInstance
+ 
+  return (
+    <MaUTable {...getTableProps()}>
+      <TableHead>
+        {headerGroups.map(headerGroup => (
+          <TableRow {...headerGroup.getHeaderGroupProps()}>
+            {headerGroup.headers.map(column => (
+              <TableCell {...column.getHeaderProps()}>{column.render('Header')}</TableCell>
             ))}
-          </TableHead>
-          <TableBody {...getTableBodyProps()}>
-            {rows.map((row, i) => {
-              prepareRow(row)
-              return (
-                <TableRow {...row.getRowProps()}>
-                  {row.cells.map(cell => {
-                    return <TableCell {...cell.getCellProps()}>{cell.render('Cell')}</TableCell>
-                  })}
-                </TableRow>
-              )
-            })}
-          </TableBody>
-        </MaUTable>
+          </TableRow>
+        ))}
+      </TableHead>
+      <TableBody {...getTableBodyProps()}>
+        {rows.map((row, i) => {
+          prepareRow(row)
+          return (
+            <TableRow {...row.getRowProps( getRowProps(row) )}>
+              {row.cells.map(cell => {
+                return <TableCell {...cell.getCellProps()}>{cell.render('Cell')}</TableCell>
+              })}
+            </TableRow>
+          )
+        })}
+      </TableBody>
+    </MaUTable>
   )
 }
 

@@ -140,7 +140,7 @@ function CustWklyDespsTable( {yearWeek, customer, selDate} ) {
                         <CSVLink data={data} filename={'WeeklyDespatches_'+ customer +'_'+ yearWeek +'.csv'}>Download as a csv file</CSVLink>
                     </span>
                     <Styles>
-                        <BaseTable columns={columns} data={data} />
+                        <BaseTable columns={columns} data={data}  />
                     </Styles>
                 </div>
             </div>
