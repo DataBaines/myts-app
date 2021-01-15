@@ -96,7 +96,7 @@ function InvoiceExceptionTable({apiParams, selectHandler, backHandler}) {
               {
                   Header: 'Delivery Postcode',
                   accessor: d => {
-                    return <div className='link' onClick={() => selectLine(d.DelPostcode, d.SenderRef)}>{d.DelPostcode}</div>
+                    return <div className='link' onClick={() => selectLine(d.DelPostcodeIx, d.SenderRef)}>{d.DelPostcode}</div>
                     },
                   
               },

@@ -117,7 +117,7 @@ function ConfirmedDespatchTable( {queryDate, matched, customer, selectHandler} )
               {
                 Header: 'Postcode',
                 accessor: d => {
-                  return <div className='link' onClick={() => selectLine(d.Postcode, d.Ref2)}>{d.Postcode}</div>
+                  return <div className='link' onClick={() => selectLine(d.PostcodeIx, d.Ref2)}>{d.Postcode}</div>
                 },
               },
               {
