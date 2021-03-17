@@ -71,7 +71,7 @@ function CustWklyDespsTable( {yearWeek, customer, selDate} ) {
                     accessor: 'OrderRef',
                 },
                 {
-                    Header: 'Ref1',
+                    Header: 'Ref-1',
                     accessor: 'Ref1',
                 },
                 {
